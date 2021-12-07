@@ -1,0 +1,162 @@
+<div style="display:flex;flex-direction:column;justify-content:space-between;height:97vh;">
+  <div class="sidebar_main">
+    <div class="logo cursor_pointer">
+      <img src="assets/Logo.svg">
+    </div>
+    <div class="primary_options">
+      <img src="assets/logout.svg" class="cursor_pointer">
+      <img src="assets/notification.svg" class="cursor_pointer">
+      <img src="assets/search.svg" class="cursor_pointer">
+      <img src="assets/ticket.svg" class="cursor_pointer">
+      <img src="assets/help.svg" class="cursor_pointer">
+    </div>
+    <ul>
+      <li class="dashboard display_common_properties" routerLink="/body">
+        <img src="assets/dashboard outline.svg" style="height:15px;align-self:center;" class="cursor_pointer">
+        <span class="padding cursor_pointer">Dashboard</span>
+      </li>
+      <li class="display_common_properties position_r" (click)="matters()">
+        <img src="assets/matters outline.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Matters</span>
+        <img src="assets/plus.svg" class="position_a_top_11 cursor_pointer">
+      </li>
+      <ul *ngIf="matters_display">
+        <li class="matters_submenu cursor_pointer">Group</li>
+        <li class="matters_submenu cursor_pointer">Client</li>
+        <li class="matters_submenu cursor_pointer">Matter</li>
+      </ul>
+      <li class="display_common_properties position_r" (click)="timesheet()">
+        <img src="assets/clock outline.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Timesheet</span>
+        <img src="assets/chevron down.svg" class="position_a_top_11 cursor_pointer">
+      </li>
+      <ul *ngIf="timesheet_display">
+        <li class="context_submenu padding_left">
+          <img src="assets/timeline outline.svg">
+          <span class="padding cursor_pointer">Timeline</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/calls outline.svg">
+          <span class="padding cursor_pointer">Calls</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/location outline.svg">
+          <span class="padding cursor_pointer">Places</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/meeting outline.svg">
+          <span class="padding cursor_pointer">Meeting</span>
+        </li>
+      </ul>
+      <li style="display:flex;padding:13px 13px 13px 22px;" routerLink="/billing">
+        <img src="assets/billing.svg" style="width:13px" class="cursor_pointer">
+        <span style="padding-left: 12px;" class="cursor_pointer">Billing</span>
+      </li>
+      <li class="display_common_properties cursor_pointer">
+        <img src="assets/wallet.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Expense</span>
+      </li>
+      <li class="display_common_properties">
+        <img src="assets/leave outline.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Leave Management</span>
+      </li>
+      <li class="display_common_properties position_r" (click)="insight()">
+        <img src="assets/data insights outline.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Data Insights</span>
+        <img src="assets/chevron down.svg" class="position_a_top_12 cursor_pointer">
+      </li>
+      <ul *ngIf="insight_display">
+        <li class="context_submenu padding_left">
+          <img src="assets/reporting outline.svg">
+          <span class="padding cursor_pointer">Reporting</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/analytics outline.svg">
+          <span class="padding cursor_pointer">Analytics</span>
+        </li>
+      </ul>
+      <li class="display_common_properties position_r" (click)="admin()">
+        <img src="assets/admin outline.svg" class="cursor_pointer">
+        <span class="padding cursor_pointer">Administration</span>
+        <img src="assets/chevron down.svg" class="position_a_top_12 cursor_pointer">
+      </li>
+      <ul *ngIf="admin_display">
+        <li class="context_submenu padding_left">
+          <img src="assets/members outline.svg">
+          <span class="padding cursor_pointer">Members</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/teams outline.svg">
+          <span class="padding cursor_pointer">Teams</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/work schedules outline.svg">
+          <span class="padding cursor_pointer">Work Schedules</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/alerts outline.svg">
+          <span class="padding cursor_pointer">Alerts</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/location services outline.svg">
+          <span class="padding cursor_pointer">Location Service</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/template outline.svg">
+          <span class="padding cursor_pointer">Template</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/contacts outline.svg">
+          <span class="padding cursor_pointer">Contacts</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/permission outline.svg">
+          <span class="padding cursor_pointer">Permission</span>
+        </li>
+        <li class="context_submenu padding_left">
+          <img src="assets/settings outline.svg">
+          <span class="padding cursor_pointer">Settings</span>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  <div style="display: flex;gap:10px;padding-left:20px">
+    <img src="assets/members filled.svg">
+    <div>
+      <span>User</span><br>
+      <small>Designation</small>
+    </div>
+    <img src="assets/three-dots.svg" style="padding-left:50px;position: relative;" (click)="options()">
+    <div>
+      <!-- *ngIf="options_display" -->
+      <div class="downloads" *ngIf="options_display">
+        <p class="download_titles">DOWNLOADS</p>
+        <div class="download_options">
+          <img src="assets/Android.svg">
+          <p>Android App</p>
+        </div>
+        <div class="download_options">
+          <img src="assets/Apple.svg">
+          <p>Mac App</p>
+        </div>
+        <div class="download_options">
+          <img src="assets/WindowsLogo.svg">
+          <p>Windows App</p>
+        </div>
+        <div class="download_options">
+          <img src="assets/chrome.svg">
+          <p>Chrome Extension</p>
+        </div>
+        <div class="download_options">
+          <img src="assets/firefox.svg">
+          <p>Firefox Extension</p>
+        </div>
+        <p class="download_titles">HAPPY WITH US?</p>
+        <div class="download_options">
+          <img src="assets/refer.svg">
+          <p>Refer us to someone</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+*{
+  margin:0;
+}
+.main_body{
+  background-color: #EDEDED;
+  height:89vh;
+  width:100%;
+  position: relative;
+}
+.article_box{
+  background-color:white;
+  height: 500px;
+  width: 95%;
+  border-radius:10px;
+  position: absolute;
+  top:15px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
